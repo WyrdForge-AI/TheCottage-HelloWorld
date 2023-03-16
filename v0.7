@@ -1,0 +1,159 @@
+"The Cottage V0.7" by Chat-GPT4, edited by Victor Peterson
+
+[---Table of Contents---
+1. Meta
+  - Changelog
+2. World
+  - Rooms
+    - Front Yard
+    - Cottage Entrance
+    - Living Room
+    - Kitchen
+    - Treasure Grove
+  - Backdrops
+    - Distant Mountains
+    - Forest
+3. Objects and Scenery
+  - Items
+    - Rusty Key
+    - Wooden Chest
+    - Hidden Compartment
+    - Cat Amulet
+    - Mysterious Book
+    - Fish Snack
+  - Characters
+    - Whiskers
+  - Scenery
+    - Flower Bed
+    - Welcome Mat
+    - Fireplace
+    - Window
+    - Landscape Painting
+    - Treasure Chest
+4. Actions and Rules
+  - Feeding
+  - Searching the Wooden Chest
+  - Wearing the Cat Amulet
+  - Asking Whiskers
+  - Reading the Mysterious Book
+  - Going West from Front Yard
+5. Ending
+  - Congratulations Room]
+
+[---Part 1: Meta---]
+
+Changelog: Version 0.7 - Rewritten using hybrid model.
+
+[---Part 2: World---]
+
+[---Rooms---]
+
+The Front Yard is a room. "You are standing in a lovely front yard with colorful flowers all around. A charming cottage lies to the north."
+
+The Cottage Entrance is a room. It is north of the Front Yard. "You are at the entrance of the quaint cottage. The front door is slightly ajar, inviting you to explore inside. The front yard lies to the south."
+
+The Living Room is a room. It is north of the Cottage Entrance. "You find yourself in a cozy living room filled with antique furniture. A door to the east leads to the kitchen, while the cottage entrance lies to the south."
+
+The Kitchen is a room. It is east of the Living Room. "You are in a quaint, rustic kitchen with pots and pans hanging from the ceiling. A door to the west leads back to the living room."
+
+The Treasure Grove is a room. It is west of the Front Yard. The description is "A small, secluded grove hidden deep within the forest. Sunlight filters through the trees, illuminating a glittering treasure chest."
+
+[---Backdrops---]
+
+The distant mountains are a backdrop in the Front Yard. The description is "Far in the distance, you can see majestic snow-capped mountains, creating a breathtaking panorama."
+
+The forest is a backdrop. It is everywhere. The description is "A dense, enchanting forest surrounds the cottage, its towering trees providing shade and shelter for countless creatures."
+
+[---Part 3: Objects and Scenery---]
+
+[---Items---]
+
+The rusty key is in the Front Yard. The description is "An old, rusty key that looks like it might unlock something interesting."
+
+The wooden chest is in the Living Room. It is a closed, openable container. The description is "An intricately carved wooden chest, begging to reveal its secrets."
+
+The hidden compartment is a closed, openable container. It is part of the wooden chest. The description is "A cleverly concealed compartment within the wooden chest."
+
+The Cat Amulet is in the hidden compartment. The description is "A small, intricately designed amulet that allows its wearer to communicate with cats."
+
+The mysterious book is in the hidden compartment. The description is "An ancient, leather-bound book with cryptic symbols etched into its cover. Whiskers mentioned that it can only be read by someone pure of heart."
+
+The fish snack is in the player's inventory. The description is "A delicious fish snack that would make any cat's day."
+
+[---Characters---]
+
+Whiskers is an animal in the Cottage Entrance. The description is "Whiskers is a plump, friendly cat with bright green eyes and a bushy tail. She seems to be the cottage's unofficial greeter."
+
+[---Scenery---]
+
+The flower bed is in the Front Yard. The description is "The flower bed is bursting with vibrant colors, from bright red roses to delicate blue forget-me-nots."
+
+The welcome mat is in the Cottage Entrance. The description is "A worn-out welcome mat lies at the front door, its friendly message almost completely faded."
+
+The fireplace is in the Living Room. The description is "A warm, crackling fire burns in the hearth, filling the room with a soothing glow."
+
+The window is a scenery in the Living Room. The description is "A large, ornate window offers a stunning view of the forest and distant mountains, allowing sunlight to stream into the room."
+
+The landscape painting is a scenery in the Cottage Entrance. The description is "A beautiful landscape painting adorns the wall, depicting a serene meadow at sunset."
+
+The treasure chest is a closed, openable container in the Treasure Grove. The description is "An ornate treasure chest filled with gold, gems, and other valuable trinkets."
+
+[---Part 4: Actions and Rules---]
+
+Feeding is an action applying to one thing and one visible thing.
+Understand "feed [something] to [someone]" as feeding.
+Understand "feed [someone] with [something]" as feeding.
+
+Instead of feeding something to Whiskers (called the offered item):
+  if the offered item is the fish snack:
+    say "Whiskers eagerly devours the fish snack and purrs contentedly.";
+    remove the fish snack from play;
+    now the player has fed Whiskers;
+  else:
+    say "Whiskers sniffs the [offered item] and turns up her nose, clearly uninterested."
+
+Instead of searching the wooden chest when the wooden chest is open:
+  now the hidden compartment is open;
+  say "You discover a hidden compartment in the chest, revealing its contents!";
+  move the mysterious book to the hidden compartment.
+
+Instead of wearing the Cat Amulet:
+  now the player wears the Cat Amulet;
+  say "As you put on the Cat Amulet, you suddenly feel a strong connection to the feline creatures around you."
+
+Instead of asking Whiskers about something when the player does not wear the Cat Amulet:
+  say "Whiskers meows in response, but you can't understand her."
+
+Instead of asking Whiskers about something when the player wears the Cat Amulet:
+  if the topic understood is "mysterious book":
+    say "Whiskers purrs softly and says, 'Ah, the mysterious book. It's said to contain powerful magic, but it can only be read by someone pure of heart.';";
+  else:
+    say "Whiskers tilts her head, thinking for a moment, then says, 'I'm not sure about that, but I do know many secrets about this cottage.'"
+
+Instead of reading the mysterious book: if the player does not wear the Cat Amulet:
+  say "You open the book, but the text seems to be written in an indecipherable language."
+
+Instead of reading the mysterious book: if the player wears the Cat Amulet:
+  if the player has fed Whiskers:
+    say "As you open the book, the symbols on the pages begin to glow, and you can suddenly understand the text. It reveals the secret location of a hidden treasure deep within the forest!";
+    now the player knows the treasure location;
+  else:
+    say "Although you can understand the symbols with the help of the Cat Amulet, the text remains stubbornly unreadable. You remember Whiskers' words about being pure of heart, and wonder if an act of kindness might help."
+
+Instead of going west from the Front Yard: if the player does not know the treasure location:
+  say "You wander away from the Cottage, twisted paths and rolling hills make it impossible to find anything of interest."
+
+Instead of going west from the Front Yard: if the player knows the treasure location:
+  now the player is in the Treasure Grove;
+  say "Guided by the knowledge from the mysterious book, you navigate through the forest and discover a hidden grove with a glittering treasure chest."
+
+A person can be fed_whiskers. A person is usually not fed_whiskers.
+A person can be knows_treasure_location. A person is usually not knows_treasure_location.
+
+[---Part 5: Ending---]
+
+The Congratulations Room is a room. The description is "You have found the treasure and completed the adventure! Congratulations!"
+
+Instead of going east from the Treasure Grove when the treasure chest is open:
+  now the player is in the Congratulations Room;
+  say "Having secured the treasure, you make your way back through the forest to celebrate your victory. Congratulations on completing the adventure!"
